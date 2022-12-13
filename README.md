@@ -73,19 +73,19 @@ There are many reasons to use this API, most common being to retrieve NFL data o
 
 Return all teams
 ```http
-GET http://localhost:3000/api/teams/
+GET /api/teams/
 ``` 
 
 Return Team By Id
 ```http
-GET http://localhost:3000/api/teams/<id>
-GET http://localhost:3000/api/teams/1
+GET /api/teams/<id>
+GET /api/teams/1
 ```
 
 Return Team By Name
 ```http
-GET http://localhost:3000/api/teams/<name>
-GET http://localhost:3000/api/teams/Seattle-Seahawks
+GET /api/teams/<name>
+GET /api/teams/Seattle-Seahawks
 ```
 
 ### Players
@@ -128,43 +128,43 @@ GET http://localhost:3000/api/teams/Seattle-Seahawks
 #### Routes
 Get All Players
 ```http
-GET http://localhost:3000/api/players/
+GET /api/players/
 ```
 
 Get Player By ID
 ```http
-GET http://localhost:3000/api/players/<id>
-GET http://localhost:3000/api/players/6
+GET /api/players/<id>
+GET /api/players/6
 ```
 
 Get Player By Team ID
 ```http
-GET http://localhost:3000/api/players/teamid/<teamId>
-GET http://localhost:3000/api/players/teamid/1
+GET /api/players/teamid/<teamId>
+GET /api/players/teamid/1
 ```
 
 Get Player By Name
 ```http
-GET http://localhost:3000/api/players/<name>
-GET http://localhost:3000/api/players/Sauce-Gardner
+GET /api/players/<name>
+GET /api/players/Sauce-Gardner
 ```
 
 Get Player By Status
 ```http
-GET http://localhost:3000/api/players/status/<status>
-GET http://localhost:3000/api/players/status/ACT
+GET /api/players/status/<status>
+GET /api/players/status/ACT
 ```
 
 Get Player By Team Name
 ```http
-GET http://localhost:3000/api/players/team/<teamName>
-GET http://localhost:3000/api/players/team/Cincinnati-Bengals
+GET /api/players/team/<teamName>
+GET /api/players/team/Cincinnati-Bengals
 ```
 
 Get Players By Position
 ```http
-GET http://localhost:3000/api/players/position/<Position>
-GET http://localhost:3000/api/players/position/QB
+GET /api/players/position/<Position>
+GET /api/players/position/QB
 ```
 
 
@@ -208,19 +208,19 @@ GET http://localhost:3000/api/players/position/QB
 #### Routes
 Get All Stats
 ```http
-GET http://localhost:3000/api/stats/
+GET /api/stats/
 ```
 
 Get Stats By Player ID
 ```http
-GET http://localhost:3000/api/stats/<id>
-GET http://localhost:3000/api/stats/400
+GET /api/stats/<id>
+GET /api/stats/400
 ```
 
 Get Stats By Player Name
 ```http
-GET http://localhost:3000/api/stats/<name>
-GET http://localhost:3000/api/stats/Patrick-Mahomes
+GET /api/stats/<name>
+GET /api/stats/Patrick-Mahomes
 ```
 
 

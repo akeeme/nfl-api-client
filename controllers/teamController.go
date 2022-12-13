@@ -137,3 +137,93 @@ func GetTeamsByDivision(c *fiber.Ctx) error {
 		"response": teams,
 	})
 }
+
+func PostTeam(c *fiber.Ctx) error {
+	var team models.Team
+
+	if err := c.BodyParser(&team); err != nil {
+		return err
+	}
+
+	database.DB.Create(&team)
+
+	if database.DB.Find(&team).RowsAffected == 0 {
+		c.Status(500)
+		return c.JSON(fiber.Map{
+			"status_code": c.Response().StatusCode(),
+			"statusDescription": "Error creating team!",
+			"response": nil,
+		})
+	} else {
+		c.Status(201)
+		return c.JSON(fiber.Map{
+			"status_code": c.Response().StatusCode(),
+			"statusDescription": "Success!",
+			"response": team,
+		})
+	}
+
+}
+
+func PutTeam(c *fiber.Ctx) error {
+	id, _ := strconv.Atoi(c.Params("id"))
+
+	team := models.Team {
+		TEAM_KEY: uint(id),
+	}
+
+	if err := c.BodyParser(&team); err != nil {
+		return err
+	}
+
+	database.DB.Model(&team).Updates(team)
+
+	database.DB.Find(&team)
+
+	return c.JSON(fiber.Map{
+		"status_code": c.Response().StatusCode(),
+		"statusDescription": "Success!",
+		"response": team,
+	})
+	// var team models.Team
+
+	// if err := c.BodyParser(&team); err != nil {
+	// 	return err
+	// }
+
+	// database.DB.Model(&team).Updates(team)
+
+	// return c.JSON(team)
+}
+
+func DeleteTeamById(c *fiber.Ctx) error {
+	id, err := strconv.Atoi(c.Params("id"))
+
+	if err != nil {
+		return nil
+	}
+
+	team := models.Team {
+		TEAM_KEY: uint(id),
+	}
+
+	
+
+	// if team exists in db then delete
+	if database.DB.Find(&team).RowsAffected != 0 {
+		database.DB.Delete(&team)
+		c.Status(200)
+		return c.JSON(fiber.Map{
+			"status_code": c.Response().StatusCode(),
+			"statusDescription": "Successfully Deleted!",
+			"response": team,
+		})
+	} else {
+		c.Status(404)
+		return c.JSON(fiber.Map{
+			"status_code": c.Response().StatusCode(),
+			"statusDescription": "Team with id " + c.Params("id") + " not found!",
+			"response": nil,
+		})
+	}
+}

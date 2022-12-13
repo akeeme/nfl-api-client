@@ -235,7 +235,7 @@ GET http://localhost:3000/api/stats/Patrick-Mahomes
 The `statusDescription` attribute contains the status of the request, indicating whether it was successful or if there was some error
 The `status_code` gives the HTTPS status code of the request.
 
-The `reponse` attribute contains any data that was received from the request. Stored in JSON objects. It is either a single JSON object or a list of JSON objects depending on the request.
+The `response` attribute contains any data that was received from the request. Stored in JSON objects. It is either a single JSON object or a list of JSON objects depending on the request.
 
 
 ## Status Codes

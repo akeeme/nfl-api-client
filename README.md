@@ -12,10 +12,6 @@ I created 3 scrapers in Python to scrape from the NFL website and populate a myS
 
 There are many reasons to use this API, most common being to retrieve NFL data on teams, players or player stats for a mobile or web application
 
-```http
-GET /api/campaigns/?api_key=12345678901234567890123456789012
-```
-
 
 ## Endpoints
 
@@ -135,42 +131,42 @@ GET http://localhost:3000/api/teams/Seattle-Seahawks
 
 #### Routes
 Get All Players
-```https
+```http
 GET http://localhost:3000/api/players/
 ```
 
 Get Player By ID
-```https
+```http
 GET http://localhost:3000/api/players/<id>
 GET http://localhost:3000/api/players/6
 ```
 
 Get Player By Team ID
-```https
+```http
 GET http://localhost:3000/api/players/teamid/<teamId>
 GET http://localhost:3000/api/players/teamid/1
 ```
 
 Get Player By Name
-```https
+```http
 GET http://localhost:3000/api/players/<name>
 GET http://localhost:3000/api/players/Sauce-Gardner
 ```
 
 Get Player By Status
-```https
+```http
 GET http://localhost:3000/api/players/status/<status>
 GET http://localhost:3000/api/players/status/ACT
 ```
 
 Get Player By Team Name
-```https
+```http
 GET http://localhost:3000/api/players/team/<teamName>
 GET http://localhost:3000/api/players/team/Cincinnati-Bengals
 ```
 
 Get Players By Position
-```https
+```http
 GET http://localhost:3000/api/players/position/<Position>
 GET http://localhost:3000/api/players/position/QB
 ```
@@ -215,18 +211,18 @@ GET http://localhost:3000/api/players/position/QB
 
 #### Routes
 Get All Stats
-```https
+```http
 GET http://localhost:3000/api/stats/
 ```
 
 Get Stats By Player ID
-```https
+```http
 GET http://localhost:3000/api/stats/<id>
 GET http://localhost:3000/api/stats/400
 ```
 
 Get Stats By Player Name
-```https
+```http
 GET http://localhost:3000/api/stats/<name>
 GET http://localhost:3000/api/stats/Patrick-Mahomes
 ```

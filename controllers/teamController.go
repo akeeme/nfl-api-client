@@ -148,10 +148,10 @@ func PostTeam(c *fiber.Ctx) error {
 	database.DB.Create(&team)
 
 	if database.DB.Find(&team).RowsAffected == 0 {
-		c.Status(500)
+		c.Status(400)
 		return c.JSON(fiber.Map{
 			"status_code": c.Response().StatusCode(),
-			"statusDescription": "Error creating team!",
+			"statusDescription": "Error creating team, team already exists!",
 			"response": nil,
 		})
 	} else {

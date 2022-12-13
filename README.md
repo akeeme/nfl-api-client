@@ -4,10 +4,6 @@ This API was built for my Intro to APIs elective as my final project. It is used
 
 I created 3 scrapers in Python to scrape from the NFL website and populate a mySQL database, which then I used GO to interact with the DB and send requested information (only for educational purposes)
 
-{% hint style="info" %}
-**Is Python your language of choice?** If so, we have a [fully-supported Python API client](https://docs.getgophish.com/python-api-client/) that makes working with the Gophish API a piece of cake!
-{% endhint %}
-
 ## Use Cases
 
 There are many reasons to use this API, most common being to retrieve NFL data on teams, players or player stats for a mobile or web application

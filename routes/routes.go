@@ -18,6 +18,9 @@ func Setup(app *fiber.App) {
 	teams.Get("/:id", controllers.GetTeamById)
 	teams.Get("/:name", controllers.GetTeamByName)
 	teams.Get("/:division", controllers.GetTeamsByDivision)
+	teams.Put("/:id", controllers.PutTeam)
+	teams.Delete("/:id", controllers.DeleteTeamById)
+	teams.Post("/", controllers.PostTeam)
 
 	// players
 	players := app.Group("/api/players")
